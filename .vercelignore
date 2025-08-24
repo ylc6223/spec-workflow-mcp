@@ -1,0 +1,52 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# Build artifacts (except docs dist)
+packages/*/dist
+packages/*/build
+!packages/docs/.vitepress/dist
+
+# Development
+.env*.local
+*.log
+.DS_Store
+
+# IDE
+.vscode
+.idea
+
+# Test
+coverage
+*.test.js
+*.test.ts
+test/
+tests/
+
+# Misc
+.git
+.changeset
+*.md
+!packages/docs/**/*.md
+
+# Large files and media
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.wmv
+
+# Source files not needed for deployment
+packages/core/src
+packages/dashboard-backend/src
+packages/dashboard-frontend/src
+packages/spec-workflow-mcp/src
+packages/vscode-extension/src
+vscode-extension/
+
+# Config files not needed for deployment
+jest.config.*
+tsconfig.*
+eslint.*
+prettier.*
+.gitignore

@@ -19,7 +19,10 @@
     "build:frontend": "pnpm --filter @specflow/dashboard-frontend build",
     "build:mcp": "pnpm --filter @specflow/spec-workflow-mcp build",
     "build:extension": "pnpm --filter @specflow/vscode-extension build",
-    "test": "pnpm -r test"
+    "test": "pnpm -r test",
+    "deploy": "node scripts/deploy.js",
+    "deploy:prod": "node scripts/deploy.js --prod",
+    "deploy:build-only": "node scripts/deploy.js --build-only"
   },
   "keywords": [
     "mcp",

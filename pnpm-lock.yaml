@@ -70,7 +70,7 @@ importers:
 
   packages/dashboard-backend:
     dependencies:
-      '@pimzino/spec-workflow-core':
+      '@specflow/spec-workflow-core':
         specifier: workspace:*
         version: link:../core
       open:
@@ -210,13 +210,13 @@ importers:
 
   packages/spec-workflow-mcp:
     dependencies:
-      '@pimzino/dashboard-backend':
+      '@specflow/dashboard-backend':
         specifier: workspace:*
         version: link:../dashboard-backend
-      '@pimzino/dashboard-frontend':
+      '@specflow/dashboard-frontend':
         specifier: workspace:*
         version: link:../dashboard-frontend
-      '@pimzino/spec-workflow-core':
+      '@specflow/spec-workflow-core':
         specifier: workspace:*
         version: link:../core
     devDependencies:
@@ -238,7 +238,7 @@ importers:
 
   packages/vscode-extension:
     dependencies:
-      '@pimzino/spec-workflow-core':
+      '@specflow/spec-workflow-core':
         specifier: workspace:*
         version: link:../core
     devDependencies:
