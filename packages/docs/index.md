@@ -86,9 +86,3 @@ specflow-mcp start --with-dashboard
 ```
 
 立即体验AI规范驱动开发的强大威力！
-
-<script setup>
-import IntroVisual from './.vitepress/components/Intro-Visual.vue'
-</script>
-
-<IntroVisual />
