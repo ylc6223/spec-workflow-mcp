@@ -1,0 +1,26 @@
+{
+  "name": "@specflow/spec-workflow-core",
+  "version": "0.0.20",
+  "description": "Core functionality for spec-workflow-mcp",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "test": "jest",
+    "docs": "typedoc --out docs src/"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "spec-workflow"
+  ],
+  "author": "",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "simple-git": "^3.28.0"
+  },
+  "devDependencies": {
+    "typedoc": "^0.25.12"
+  }
+}

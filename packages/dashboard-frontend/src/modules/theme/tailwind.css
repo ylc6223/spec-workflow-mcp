@@ -1,0 +1,1064 @@
+/* 使用 Tailwind CSS v4 的导入方式 */
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+    
+    /* Base Colors - Light Theme */
+    --background: 0 0% 100%;          /* #ffffff */
+    --foreground: 222.2 84% 4.9%;     /* #0f172a */
+    
+    /* Card Colors */
+    --card: 0 0% 100%;                /* #ffffff */
+    --card-foreground: 222.2 84% 4.9%; /* #0f172a */
+    
+    /* Popover Colors */
+    --popover: 0 0% 100%;             /* #ffffff */
+    --popover-foreground: 222.2 84% 4.9%; /* #0f172a */
+    
+    /* Primary Colors - Blue Theme Default */
+    --primary: 221.2 83.2% 53.3%;     /* #3b82f6 - Blue 500 */
+    --primary-foreground: 210 40% 98%; /* #f8fafc */
+    
+    /* Secondary Colors */
+    --secondary: 210 40% 96%;          /* #f1f5f9 */
+    --secondary-foreground: 222.2 84% 4.9%; /* #0f172a */
+    
+    /* Muted Colors */
+    --muted: 210 40% 96%;              /* #f1f5f9 */
+    --muted-foreground: 215.4 16.3% 46.9%; /* #64748b */
+    
+    /* Accent Colors */
+    --accent: 210 40% 96%;             /* #f1f5f9 */
+    --accent-foreground: 222.2 84% 4.9%; /* #0f172a */
+    
+    /* Destructive Colors */
+    --destructive: 0 84.2% 60.2%;      /* #ef4444 */
+    --destructive-foreground: 210 40% 98%; /* #f8fafc */
+    
+    /* Border and Input Colors */
+    --border: 214.3 31.8% 91.4%;       /* #e2e8f0 */
+    --input: 214.3 31.8% 91.4%;        /* #e2e8f0 */
+    --ring: 221.2 83.2% 53.3%;         /* #3b82f6 */
+    
+    /* Border Radius */
+    --radius: 0.5rem;
+    
+    /* Chart Colors - Light Theme */
+    --chart-1: 12 76% 61%;   /* #e76f51 橙红色 */
+    --chart-2: 173 58% 39%;  /* #2a9d8f 青绿色 */
+    --chart-3: 197 37% 24%;  /* #264653 深青色 */
+    --chart-4: 43 74% 66%;   /* #e9c46a 金黄色 */
+    --chart-5: 27 87% 67%;   /* #f4a261 暖橙色 */
+    
+    /* Animation Easing Curves */
+    --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Animation Durations */
+    --duration-fast: 150ms;
+    --duration-normal: 300ms;
+    --duration-slow: 500ms;
+    
+    /* Extended Theme Variables */
+    --background-deep: 216 20.11% 95.47%;  /* 主体区域背景色 */
+    --success: 144 57% 58%;                 /* 成功状态颜色 */
+    --success-foreground: 0 0% 98%;
+    --warning: 42 84% 61%;                  /* 警告状态颜色 */
+    --warning-foreground: 0 0% 98%;
+    --accent-hover: 200deg 10% 90%;         /* 悬停强调色 */
+    --heavy: 192deg 9.43% 89.61%;           /* 更深的颜色 */
+    --heavy-foreground: 240 6% 10%;
+    --input-placeholder: 217 10.6% 65%;     /* 输入框占位符颜色 */
+    --input-background: 0 0% 100%;          /* 输入框背景 */
+    --overlay: 0deg 0% 0% / 30%;            /* 遮罩颜色 */
+    --font-size-base: 16px;                 /* 基本文字大小 */
+    
+    /* Component Colors */
+    --sidebar: 0 0% 100%;                   /* 侧边栏背景 */
+    --sidebar-deep: 0 0% 100%;              /* 侧边栏深色背景 */
+    --header: 0 0% 100%;                    /* 头部背景 */
+    --menu: var(--sidebar);                 /* 菜单背景 */
+  }
+
+  .dark {
+    /* Base Colors - Dark Theme */
+    --background: 222.2 84% 4.9%;      /* #0f172a */
+    --foreground: 210 40% 98%;         /* #f8fafc */
+    
+    /* Card Colors */
+    --card: 222.2 84% 4.9%;            /* #0f172a */
+    --card-foreground: 210 40% 98%;    /* #f8fafc */
+    
+    /* Popover Colors */
+    --popover: 222.2 84% 4.9%;         /* #0f172a */
+    --popover-foreground: 210 40% 98%; /* #f8fafc */
+    
+    /* Primary Colors - Blue Theme Default */
+    --primary: 217.2 91.2% 59.8%;      /* #60a5fa - Blue 400 */
+    --primary-foreground: 222.2 84% 4.9%; /* #0f172a */
+    
+    /* Secondary Colors */
+    --secondary: 217.2 32.6% 17.5%;    /* #1e293b */
+    --secondary-foreground: 210 40% 98%; /* #f8fafc */
+    
+    /* Muted Colors */
+    --muted: 217.2 32.6% 17.5%;        /* #1e293b */
+    --muted-foreground: 215 20.2% 65.1%; /* #94a3b8 */
+    
+    /* Accent Colors */
+    --accent: 217.2 32.6% 17.5%;       /* #1e293b */
+    --accent-foreground: 210 40% 98%;  /* #f8fafc */
+    
+    /* Destructive Colors */
+    --destructive: 0 62.8% 30.6%;      /* #dc2626 */
+    --destructive-foreground: 210 40% 98%; /* #f8fafc */
+    
+    /* Border and Input Colors */
+    --border: 217.2 32.6% 17.5%;       /* #1e293b */
+    --input: 217.2 32.6% 17.5%;        /* #1e293b */
+    --ring: 224.3 76.3% 94.1%;         /* #f1f5f9 */
+    
+    /* Chart Colors - Dark Theme */
+    --chart-1: 220 70% 50%;  /* #3b82f6 蓝色 */
+    --chart-2: 160 60% 45%;  /* #10b981 绿色 */
+    --chart-3: 30 80% 55%;   /* #f59e0b 琥珀色 */
+    --chart-4: 280 65% 60%;  /* #8b5cf6 紫色 */
+    --chart-5: 340 75% 55%;  /* #ef4444 红色 */
+    
+    /* Extended Dark Theme Variables */
+    --background-deep: 220deg 13.06% 9%;    /* 主体区域背景色 */
+    --success: 144 57% 58%;                  /* 成功状态颜色 */
+    --success-foreground: 0 0% 98%;
+    --warning: 42 84% 61%;                   /* 警告状态颜色 */
+    --warning-foreground: 0 0% 98%;
+    --accent-hover: 216 5% 24%;              /* 悬停强调色 */
+    --heavy: 216 5% 24%;                     /* 更深的颜色 */
+    --heavy-foreground: 0 0% 98%;
+    --input-placeholder: 218deg 11% 65%;     /* 输入框占位符颜色 */
+    --input-background: 0deg 0% 100% / 5%;   /* 输入框背景 */
+    --overlay: 0deg 0% 0% / 40%;             /* 遮罩颜色 */
+    --font-size-base: 16px;                  /* 基本文字大小 */
+    
+    /* Component Colors - Dark Theme */
+    --sidebar: 222.34deg 10.43% 12.27%;      /* 侧边栏背景 */
+    --sidebar-deep: 220deg 13.06% 9%;        /* 侧边栏深色背景 */
+    --header: 222.34deg 10.43% 12.27%;       /* 头部背景 */
+    --menu: var(--sidebar);                  /* 菜单背景 */
+  }
+  
+  /* Blue Theme Variants - extending the default blue theme */
+  [data-theme='blue'],
+  [data-theme='sky-blue'] {
+    /* Light mode blue theme - similar to default but with slight variations */
+    --primary: 221.2 83.2% 53.3%;     /* #3b82f6 */
+    --primary-foreground: 210 40% 98%; /* #f8fafc */
+    --ring: 221.2 83.2% 53.3%;
+  }
+  
+  .dark[data-theme='blue'],
+  .dark[data-theme='sky-blue'] {
+    /* Dark mode blue theme - matching the existing sky-blue theme */
+    --background: 222.2 84% 4.9%;
+    --background-deep: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;      /* #60a5fa */
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --accent-hover: 216 5% 24%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+    --sidebar: 222.2 84% 4.9%;
+    --sidebar-deep: 222.2 84% 4.9%;
+    --header: 222.2 84% 4.9%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  
+  /**
+   * THEME TRANSITION SYSTEM
+   * =====================
+   * 
+   * This system provides smooth theme switching without causing flickering or performance issues.
+   * 
+   * Key principles:
+   * 1. Selective transitions: Only specific elements transition, not all elements (*)
+   * 2. Color-only transitions: Only background-color, color, and border-color transition
+   * 3. Layout-safe: No transitions on properties that cause layout reflow
+   * 4. Performance optimized: Uses will-change hints for browsers
+   * 5. Reduced motion support: Respects user accessibility preferences
+   * 
+   * How it works:
+   * - CSS defines which elements should smoothly transition
+   * - ThemeProvider temporarily disables transitions during theme switch
+   * - After theme is applied, transitions are re-enabled for smooth effect
+   * 
+   * Usage:
+   * - Use .theme-transition for normal component transitions
+   * - Use .theme-transition-fast for interactive element transitions  
+   * - Use .theme-transition-smooth for container/card transitions
+   */
+  
+  /* Disable root transitions to prevent unwanted effects */
+  :root {
+    transition-property: none;
+    transition-duration: 0ms;
+  }
+  
+  /* Ensure proper sticky positioning context */
+  html, body {
+    background-color: hsl(var(--background)) !important;
+    position: relative;
+    overflow-x: hidden;
+  }
+  
+  /* Theme transition targets - specific elements that should smoothly transition */
+  body,
+  [data-slot="card"],
+  [data-slot="popover-content"],
+  [data-slot="dropdown-menu-content"],
+  [data-slot="select-content"],
+  [data-slot="dialog-content"],
+  [data-slot="alert-dialog-content"],
+  [data-slot="sheet-content"],
+  [data-slot="sheet-overlay"],
+  [data-slot="dialog-overlay"],
+  [data-slot="alert-dialog-overlay"],
+  .bg-background:not(header),
+  .bg-card:not(header),
+  .bg-popover:not(header),
+  .bg-muted:not(header),
+  .bg-accent:not(header),
+  .bg-primary:not(header),
+  .bg-secondary:not(header),
+  .text-foreground:not(header),
+  .text-muted-foreground:not(header),
+  .border-border:not(header) {
+    transition: background-color var(--duration-normal) var(--ease-standard), 
+                color var(--duration-normal) var(--ease-standard), 
+                border-color var(--duration-normal) var(--ease-standard);
+    /* Prevent layout shift during transitions */
+    will-change: background-color, color, border-color;
+  }
+  
+  /* Special handling for header element to preserve sticky positioning */
+  header {
+    transition: background-color var(--duration-normal) var(--ease-standard), 
+                color var(--duration-normal) var(--ease-standard), 
+                border-color var(--duration-normal) var(--ease-standard);
+    /* Don't use will-change on header to avoid creating new stacking context */
+    will-change: auto;
+  }
+  
+  /* Optimize transitions for theme switching performance */
+  @media (prefers-reduced-motion: no-preference) {
+    body {
+      /* Smoother transitions for body element */
+      transition: background-color 250ms var(--ease-standard), 
+                  color 250ms var(--ease-standard);
+    }
+  }
+  
+  /* Disable all theme transitions during switching to prevent conflicts */
+  .theme-switching,
+  .theme-switching * {
+    transition: none !important;
+  }
+  
+  /* Ensure sticky elements aren't affected by theme transitions */
+  .theme-switching header.sticky,
+  .theme-switching * header.sticky {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 50 !important;
+  }
+  
+  /* Theme-aware transition utility class for components */
+  .theme-transition {
+    transition: background-color var(--duration-normal) var(--ease-standard), 
+                color var(--duration-normal) var(--ease-standard), 
+                border-color var(--duration-normal) var(--ease-standard),
+                box-shadow var(--duration-normal) var(--ease-standard);
+    will-change: background-color, color, border-color, box-shadow;
+  }
+  
+  /* Faster theme transition for interactive elements */
+  .theme-transition-fast {
+    transition: background-color var(--duration-fast) var(--ease-standard), 
+                color var(--duration-fast) var(--ease-standard), 
+                border-color var(--duration-fast) var(--ease-standard);
+    will-change: background-color, color, border-color;
+  }
+  
+  /* Smooth theme transition for cards and containers */
+  .theme-transition-smooth {
+    transition: background-color var(--duration-slow) var(--ease-standard), 
+                color var(--duration-slow) var(--ease-standard), 
+                border-color var(--duration-slow) var(--ease-standard),
+                box-shadow var(--duration-slow) var(--ease-standard);
+    will-change: background-color, color, border-color, box-shadow;
+  }
+  
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    .theme-transition,
+    .theme-transition-fast,
+    .theme-transition-smooth,
+    body,
+    [data-slot="card"],
+    [data-slot="popover-content"],
+    [data-slot="dropdown-menu-content"],
+    [data-slot="select-content"],
+    [data-slot="dialog-content"],
+    [data-slot="alert-dialog-content"],
+    [data-slot="sheet-content"],
+    [data-slot="sheet-overlay"],
+    [data-slot="dialog-overlay"],
+    [data-slot="alert-dialog-overlay"],
+    .bg-background,
+    .bg-card,
+    .bg-popover,
+    .bg-muted,
+    .bg-accent,
+    .bg-primary,
+    .bg-secondary,
+    .text-foreground,
+    .text-muted-foreground,
+    .border-border {
+      transition: none !important;
+      animation: none !important;
+    }
+
+    /* Respect reduced motion for sheet animations */
+    [data-slot="sheet-content"] {
+      transition: none !important;
+      will-change: auto !important;
+    }
+
+    [data-slot="sheet-overlay"] {
+      transition: none !important;
+    }
+  }
+  
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "rlig" 1, "calt" 1;
+    /* background-image: url('https://images.unsplash.com/photo-1637928114342-05b15ee4034e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3276&q=80'); */
+  }
+  
+  /* Focus management */
+  .focus\:ring-2:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+  
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+}
+
+@layer components {
+  /* Animation Keyframes */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+  
+  @keyframes slideIn {
+    from { transform: translateY(-8px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  @keyframes scaleIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
+  @keyframes slideInFromLeft {
+    from { transform: translateX(-16px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+  
+  @keyframes slideInFromRight {
+    from { transform: translateX(16px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+  
+  /* Sheet slide animations */
+  @keyframes slideInFromRightSheet {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+  }
+  
+  @keyframes slideOutToRightSheet {
+    from { transform: translateX(0); }
+    to { transform: translateX(100%); }
+  }
+  
+  @keyframes slideInFromLeftSheet {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+  }
+  
+  @keyframes slideOutToLeftSheet {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+  }
+  
+  @keyframes slideInFromTopSheet {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+  }
+  
+  @keyframes slideOutToTopSheet {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100%); }
+  }
+  
+  @keyframes slideInFromBottomSheet {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+  
+  @keyframes slideOutToBottomSheet {
+    from { transform: translateY(0); }
+    to { transform: translateY(100%); }
+  }
+  
+  /* Animation Classes */
+  .fade-in {
+    animation: fadeIn var(--duration-normal) var(--ease-standard);
+  }
+  
+  .slide-in {
+    animation: slideIn var(--duration-normal) var(--ease-standard);
+  }
+  
+  .scale-in {
+    animation: scaleIn var(--duration-fast) var(--ease-standard);
+  }
+  
+  .slide-in-left {
+    animation: slideInFromLeft var(--duration-normal) var(--ease-out);
+  }
+  
+  .slide-in-right {
+    animation: slideInFromRight var(--duration-normal) var(--ease-out);
+  }
+  
+  /* Sheet animation classes */
+  .slide-in-from-right {
+    animation: slideInFromRightSheet var(--duration-normal) var(--ease-out);
+  }
+  
+  .slide-out-to-right {
+    animation: slideOutToRightSheet var(--duration-normal) var(--ease-in);
+  }
+  
+  .slide-in-from-left {
+    animation: slideInFromLeftSheet var(--duration-normal) var(--ease-out);
+  }
+  
+  .slide-out-to-left {
+    animation: slideOutToLeftSheet var(--duration-normal) var(--ease-in);
+  }
+  
+  .slide-in-from-top {
+    animation: slideInFromTopSheet var(--duration-normal) var(--ease-out);
+  }
+  
+  .slide-out-to-top {
+    animation: slideOutToTopSheet var(--duration-normal) var(--ease-in);
+  }
+  
+  .slide-in-from-bottom {
+    animation: slideInFromBottomSheet var(--duration-normal) var(--ease-out);
+  }
+  
+  .slide-out-to-bottom {
+    animation: slideOutToBottomSheet var(--duration-normal) var(--ease-in);
+  }
+  
+  /* Interactive Element States */
+  .interactive-element {
+    transition: all var(--duration-fast) var(--ease-standard);
+  }
+  
+  .interactive-element:hover {
+    background-color: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+  }
+  
+  .interactive-element:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+  
+  .interactive-element:active {
+    transform: scale(0.98);
+  }
+  
+  .interactive-element:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  
+  /* Enhanced Component Backgrounds */
+  [data-slot="sheet-content"] {
+    background-color: hsl(var(--background)) !important;
+    border: 1px solid hsl(var(--border));
+    /* Smooth transitions for all transform and opacity changes */
+    transition: transform var(--duration-normal) var(--ease-standard), 
+                opacity var(--duration-normal) var(--ease-standard);
+  }
+
+  /* Sheet initial positioning (hidden state) */
+  [data-slot="sheet-content"][data-side="right"] {
+    transform: translateX(100%);
+  }
+  
+  [data-slot="sheet-content"][data-side="left"] {
+    transform: translateX(-100%);
+  }
+  
+  [data-slot="sheet-content"][data-side="top"] {
+    transform: translateY(-100%);
+  }
+  
+  [data-slot="sheet-content"][data-side="bottom"] {
+    transform: translateY(100%);
+  }
+
+  /* Sheet visible state - slides into position */
+  [data-slot="sheet-content"][data-state="open"][data-side="right"],
+  [data-slot="sheet-content"][data-state="open"][data-side="left"],
+  [data-slot="sheet-content"][data-state="open"][data-side="top"],
+  [data-slot="sheet-content"][data-state="open"][data-side="bottom"] {
+    transform: translate(0, 0);
+  }
+
+  /* Sheet overlay transitions */
+  [data-slot="sheet-overlay"] {
+    opacity: 0;
+    transition: opacity var(--duration-normal) var(--ease-standard);
+  }
+
+  [data-slot="sheet-overlay"][data-state="open"] {
+    opacity: 1;
+  }
+
+  /* Sheet overlay mobile optimization */
+  [data-slot="sheet-overlay"] {
+    /* Prevent background scroll on mobile when sheet is open */
+    touch-action: none;
+    /* Ensure overlay covers full viewport including safe areas */
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    /* Support for devices with notches/safe areas */
+    height: 100dvh !important;
+    z-index: 50 !important;
+    /* Ensure overlay background is visible */
+    background-color: hsl(var(--background) / 0.8) !important;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+
+  /* Mobile-optimized sheet content */
+  @media (max-width: 768px) {
+    [data-slot="sheet-content"] {
+      /* Improved mobile viewport constraints to prevent overflow */
+      max-width: min(80vw, 300px) !important;
+      width: min(80vw, 300px) !important;
+      min-width: 260px !important;
+      /* Full height with proper safe area handling */
+      height: 100vh !important;
+      height: 100dvh !important;
+      max-height: 100dvh !important;
+      /* Ensure content scrolls properly within bounds */
+      overflow: hidden !important;
+      display: flex !important;
+      flex-direction: column !important;
+      /* Add safe area padding */
+      padding-top: max(0.5rem, env(safe-area-inset-top));
+      padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+      /* Enhanced mobile animation performance */
+      will-change: transform;
+      /* Prevent animation jank on mobile */
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    
+    /* Ensure sheet content stays within safe viewport bounds */
+    [data-slot="sheet-content"][data-side="right"] {
+      right: max(0px, env(safe-area-inset-right)) !important;
+      left: auto !important;
+      top: 0 !important;
+      bottom: 0 !important;
+    }
+    
+    [data-slot="sheet-content"][data-side="left"] {
+      left: max(0px, env(safe-area-inset-left)) !important;
+      right: auto !important;
+      top: 0 !important;
+      bottom: 0 !important;
+    }
+  }
+
+  /* Extra small mobile devices */
+  @media (max-width: 360px) {
+    [data-slot="sheet-content"] {
+      max-width: min(85vw, 280px) !important;
+      width: min(85vw, 280px) !important;
+      min-width: 240px !important;
+    }
+  }
+  
+  /* Very small mobile devices */
+  @media (max-width: 320px) {
+    [data-slot="sheet-content"] {
+      max-width: min(90vw, 260px) !important;
+      width: min(90vw, 260px) !important;
+      min-width: 220px !important;
+    }
+  }
+  
+  /* Body scroll lock when sheet is open */
+  body[data-sheet-open="true"] {
+    overflow: hidden !important;
+    position: fixed !important;
+    width: 100% !important;
+    height: 100% !important;
+    /* Prevent bounce scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: none;
+  }
+  
+  /* Prevent scroll behind sheet on mobile */
+  @media (max-width: 768px) {
+    body[data-sheet-open="true"] {
+      touch-action: none;
+    }
+    
+    [data-slot="sheet-overlay"] {
+      /* Enhanced backdrop */
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+    }
+  }
+
+  /* Enhanced mobile touch targets */
+  .mobile-nav-item {
+    min-height: 56px; /* 44px + padding for comfortable touch target */
+    transition: all var(--duration-fast) var(--ease-standard);
+    flex-shrink: 0; /* Prevent nav items from shrinking */
+  }
+  
+  /* Force sticky header positioning to work correctly */
+  header.sticky {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 50 !important;
+    /* Ensure header doesn't get affected by transform or contain properties */
+    transform: none !important;
+    contain: none !important;
+    /* Create proper stacking context */
+    isolation: isolate;
+  }
+
+  .mobile-nav-item:active {
+    transform: scale(0.98);
+    background-color: hsl(var(--accent) / 0.8);
+  }
+  
+  /* Mobile sheet content scroll container */
+  .mobile-sheet-scroll {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* Enable smooth scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
+    /* Prevent overscroll bounce */
+    overscroll-behavior-y: contain;
+  }
+
+  /* Mobile language toggle */
+  .mobile-language-toggle {
+    min-height: 44px; /* Comfortable touch target for mobile */
+    touch-action: manipulation; /* Optimize for touch */
+  }
+
+  /* Ensure emoji flags are visible and properly rendered */
+  .language-flag {
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+  }
+
+  .mobile-language-toggle:active {
+    transform: scale(0.95);
+    transition: transform var(--duration-fast) var(--ease-in);
+  }
+  
+  [data-slot="dropdown-menu-content"],
+  [data-slot="select-content"] {
+    background-color: hsl(var(--popover)) !important;
+    border: 1px solid hsl(var(--border));
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: 0 10px 15px -3px hsl(var(--foreground) / 0.1), 
+                0 4px 6px -2px hsl(var(--foreground) / 0.05);
+  }
+
+  /* Dialog Component Styling */
+  [data-slot="dialog-overlay"] {
+    background-color: hsl(var(--background) / 0.8) !important;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+
+  [data-slot="dialog-content"] {
+    background-color: hsl(var(--card)) !important;
+    border: 1px solid hsl(var(--border));
+    box-shadow: 0 25px 50px -12px hsl(var(--foreground) / 0.25);
+  }
+
+  /* Modal and Popover Components */
+  [data-slot="alert-dialog-overlay"] {
+    background-color: hsl(var(--background) / 0.8) !important;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+
+  [data-slot="alert-dialog-content"] {
+    background-color: hsl(var(--card)) !important;
+    border: 1px solid hsl(var(--border));
+    box-shadow: 0 25px 50px -12px hsl(var(--foreground) / 0.25);
+  }
+
+  /* Command and Popover styling */
+  [data-slot="command-list"],
+  [data-slot="popover-content"] {
+    background-color: hsl(var(--popover)) !important;
+    border: 1px solid hsl(var(--border));
+    box-shadow: 0 10px 15px -3px hsl(var(--foreground) / 0.1), 
+                0 4px 6px -2px hsl(var(--foreground) / 0.05);
+  }
+  
+  /* Card hover effects */
+  .card-hover {
+    transition: all var(--duration-normal) var(--ease-standard);
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px hsl(var(--foreground) / 0.1), 
+                0 4px 6px -2px hsl(var(--foreground) / 0.05);
+  }
+  
+  /* Button press animation */
+  .btn-press:active {
+    transform: scale(0.98);
+    transition: transform var(--duration-fast) var(--ease-in);
+  }
+  
+  /* Loading animation */
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  .loading-spin {
+    animation: spin 1s linear infinite;
+  }
+  
+  /* Pulse animation for pending states */
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  
+  .pulse-animation {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Defect Priority and Status Colors */
+  .defect-priority-low {
+    background-color: hsl(210 40% 96%);
+    color: hsl(215.4 16.3% 46.9%);
+    border-color: hsl(214.3 31.8% 91.4%);
+  }
+
+  .dark .defect-priority-low {
+    background-color: hsl(217.2 32.6% 17.5%);
+    color: hsl(215 20.2% 65.1%);
+    border-color: hsl(217.2 32.6% 17.5%);
+  }
+
+  .defect-priority-medium {
+    background-color: hsl(204 100% 97%);
+    color: hsl(213 94% 28%);
+    border-color: hsl(213 34% 86%);
+  }
+
+  .dark .defect-priority-medium {
+    background-color: hsl(213 16% 20%);
+    color: hsl(213 94% 68%);
+    border-color: hsl(213 27% 25%);
+  }
+
+  .defect-priority-high {
+    background-color: hsl(32 100% 97%);
+    color: hsl(25 95% 35%);
+    border-color: hsl(32 34% 86%);
+  }
+
+  .dark .defect-priority-high {
+    background-color: hsl(25 16% 20%);
+    color: hsl(25 95% 65%);
+    border-color: hsl(25 27% 25%);
+  }
+
+  .defect-priority-critical {
+    background-color: hsl(0 100% 97%);
+    color: hsl(0 84% 35%);
+    border-color: hsl(0 34% 86%);
+  }
+
+  .dark .defect-priority-critical {
+    background-color: hsl(0 16% 20%);
+    color: hsl(0 84% 65%);
+    border-color: hsl(0 27% 25%);
+  }
+
+  /* Defect Type Colors */
+  .defect-type-bug {
+    background-color: hsl(0 100% 97%);
+    color: hsl(0 84% 35%);
+    border-color: hsl(0 34% 86%);
+  }
+
+  .dark .defect-type-bug {
+    background-color: hsl(0 16% 20%);
+    color: hsl(0 84% 65%);
+    border-color: hsl(0 27% 25%);
+  }
+
+  .defect-type-enhancement {
+    background-color: hsl(204 100% 97%);
+    color: hsl(213 94% 28%);
+    border-color: hsl(213 34% 86%);
+  }
+
+  .dark .defect-type-enhancement {
+    background-color: hsl(213 16% 20%);
+    color: hsl(213 94% 68%);
+    border-color: hsl(213 27% 25%);
+  }
+
+  .defect-type-feature {
+    background-color: hsl(142 76% 96%);
+    color: hsl(142 71% 25%);
+    border-color: hsl(141 34% 85%);
+  }
+
+  .dark .defect-type-feature {
+    background-color: hsl(142 16% 20%);
+    color: hsl(142 71% 65%);
+    border-color: hsl(142 27% 25%);
+  }
+
+  .defect-type-task {
+    background-color: hsl(262 83% 97%);
+    color: hsl(263 70% 35%);
+    border-color: hsl(262 34% 86%);
+  }
+
+  .dark .defect-type-task {
+    background-color: hsl(263 16% 20%);
+    color: hsl(263 70% 65%);
+    border-color: hsl(263 27% 25%);
+  }
+
+  /* Kanban Column Status Colors */
+  .kanban-column-new {
+    border-left: 4px solid hsl(213 94% 68%);
+  }
+
+  .kanban-column-inprogress {
+    border-left: 4px solid hsl(32 95% 65%);
+  }
+
+  .kanban-column-testing {
+    border-left: 4px solid hsl(263 70% 65%);
+  }
+
+  .kanban-column-resolved {
+    border-left: 4px solid hsl(142 71% 65%);
+  }
+
+  .kanban-column-closed {
+    border-left: 4px solid hsl(215 20.2% 65.1%);
+  }
+
+  /* Drag and drop states */
+  .kanban-drag-over {
+    background-color: hsl(var(--primary) / 0.05);
+    border-color: hsl(var(--primary));
+    box-shadow: 0 0 0 2px hsl(var(--primary) / 0.2);
+  }
+
+  /* Interactive card states */
+  .defect-card {
+    transition: all var(--duration-fast) var(--ease-standard);
+  }
+
+  .defect-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px -2px hsl(var(--foreground) / 0.1);
+  }
+
+  .defect-card:active {
+    transform: translateY(0);
+    transition: transform var(--duration-fast) var(--ease-in);
+  }
+
+  /* Slider Component Styling - Enhanced specificity to override Radix defaults */
+  [data-slot="slider-thumb"] {
+    /* Ensure thumb is properly sized and visible */
+    width: 1.5rem !important; /* 24px - size-6 */
+    height: 1.5rem !important; /* 24px - size-6 */
+    min-width: 1.5rem !important;
+    min-height: 1.5rem !important;
+    
+    /* Background and borders with design system colors */
+    background-color: hsl(var(--background)) !important;
+    border: 2px solid hsl(var(--primary)) !important;
+    border-radius: 9999px !important; /* rounded-full */
+    
+    /* Shadow for depth */
+    box-shadow: 0 10px 15px -3px hsl(var(--foreground) / 0.1), 
+                0 4px 6px -2px hsl(var(--foreground) / 0.05) !important;
+    
+    /* Positioning and interaction */
+    position: relative !important;
+    z-index: 10 !important;
+    cursor: pointer !important;
+    
+    /* Smooth transitions */
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  /* Hover state for slider thumb */
+  [data-slot="slider-thumb"]:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 20px 25px -5px hsl(var(--foreground) / 0.1), 
+                0 10px 10px -5px hsl(var(--foreground) / 0.04) !important;
+  }
+
+  /* Active state for slider thumb */
+  [data-slot="slider-thumb"]:active {
+    transform: scale(0.95) !important;
+  }
+
+  /* Focus state for slider thumb */
+  [data-slot="slider-thumb"]:focus-visible {
+    outline: none !important;
+    box-shadow: 0 0 0 2px hsl(var(--ring)) !important,
+                0 0 0 4px hsl(var(--background)) !important,
+                0 10px 15px -3px hsl(var(--foreground) / 0.1), 
+                0 4px 6px -2px hsl(var(--foreground) / 0.05) !important;
+  }
+
+  /* Focus state fallback for browsers that don't support :focus-visible */
+  [data-slot="slider-thumb"]:focus:not(:focus-visible) {
+    outline: none !important;
+  }
+
+  /* Disabled state for slider thumb */
+  [data-slot="slider-thumb"]:disabled {
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+    pointer-events: none !important;
+  }
+
+  /* Slider track styling for better contrast */
+  [data-slot="slider-track"] {
+    background-color: hsl(var(--muted)) !important;
+    border: 1px solid hsl(var(--border)) !important;
+    box-shadow: inset 0 1px 2px 0 hsl(var(--foreground) / 0.05) !important;
+  }
+
+  /* Slider range styling */
+  [data-slot="slider-range"] {
+    background-color: hsl(var(--primary)) !important;
+    box-shadow: 0 1px 2px 0 hsl(var(--primary) / 0.3) !important;
+  }
+
+  /* Dark mode enhancements for slider thumb */
+  .dark [data-slot="slider-thumb"] {
+    /* Ensure thumb stands out in dark mode */
+    border-color: hsl(var(--primary)) !important;
+    background-color: hsl(var(--background)) !important;
+  }
+
+  .dark [data-slot="slider-thumb"]:hover {
+    box-shadow: 0 20px 25px -5px hsl(var(--foreground) / 0.25), 
+                0 10px 10px -5px hsl(var(--foreground) / 0.1) !important;
+  }
+
+  /* Improve track contrast in dark mode */
+  .dark [data-slot="slider-track"] {
+    background-color: hsl(var(--muted)) !important;
+    border-color: hsl(var(--border)) !important;
+  }
+
+}
+

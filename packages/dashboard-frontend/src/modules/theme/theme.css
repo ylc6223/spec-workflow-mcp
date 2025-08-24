@@ -1,0 +1,205 @@
+/* 基础布局样式 - 已经迁移到shadcn/ui主题系统 */
+
+/* Global theme transition styles */
+* {
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Prevent transitions on page load */
+.no-transition * {
+  transition: none !important;
+}
+
+/* Enhanced theme transition for cards and surfaces */
+[class*="card"], 
+[class*="sheet"], 
+[class*="dialog"], 
+[class*="dropdown"], 
+[class*="popover"] {
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Markdown styles (GitHub-like) */
+.markdown-content { line-height: 1.7; font-size: 16px; }
+.markdown-content pre { 
+  padding: 12px; 
+  border: 1px solid hsl(var(--border)); 
+  border-radius: 8px; 
+  overflow: auto; 
+  background: hsl(var(--muted) / 0.1);
+}
+.markdown-content code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+.markdown-content h1, .markdown-content h2, .markdown-content h3, .markdown-content h4 { margin: 16px 0 8px; }
+.markdown-content table { border-collapse: collapse; width: 100%; }
+.markdown-content table th, .markdown-content table td { border: 1px solid hsl(var(--border)); padding: 6px 10px; }
+.markdown-content .mermaid { text-align: center; margin: 20px 0; }
+
+/* Syntax highlighting for markdown source view */
+.hljs {
+  background: transparent !important;
+  color: hsl(var(--foreground));
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #6a737d;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-addition {
+  color: #d73a49;
+}
+
+.hljs-number,
+.hljs-string,
+.hljs-meta .hljs-meta-string,
+.hljs-literal,
+.hljs-doctag,
+.hljs-regexp {
+  color: #032f62;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #6f42c1;
+}
+
+.hljs-attribute,
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-class .hljs-title,
+.hljs-type {
+  color: #e36209;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-subst,
+.hljs-meta,
+.hljs-meta .hljs-keyword,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-link {
+  color: #005cc5;
+}
+
+/* Dark mode syntax highlighting */
+.dark .hljs-comment,
+.dark .hljs-quote {
+  color: #8b949e;
+}
+
+.dark .hljs-keyword,
+.dark .hljs-selector-tag,
+.dark .hljs-addition {
+  color: #ff7b72;
+}
+
+.dark .hljs-number,
+.dark .hljs-string,
+.dark .hljs-meta .hljs-meta-string,
+.dark .hljs-literal,
+.dark .hljs-doctag,
+.dark .hljs-regexp {
+  color: #a5d6ff;
+}
+
+.dark .hljs-title,
+.dark .hljs-section,
+.dark .hljs-name,
+.dark .hljs-selector-id,
+.dark .hljs-selector-class {
+  color: #d2a8ff;
+}
+
+.dark .hljs-attribute,
+.dark .hljs-attr,
+.dark .hljs-variable,
+.dark .hljs-template-variable,
+.dark .hljs-class .hljs-title,
+.dark .hljs-type {
+  color: #ffa657;
+}
+
+.dark .hljs-symbol,
+.dark .hljs-bullet,
+.dark .hljs-subst,
+.dark .hljs-meta,
+.dark .hljs-meta .hljs-keyword,
+.dark .hljs-selector-attr,
+.dark .hljs-selector-pseudo,
+.dark .hljs-link {
+  color: #79c0ff;
+}
+
+/* Custom Theme Toggle Switch Styles */
+/* The switch - the box around the slider */
+.switch {
+  display: block;
+  --width-of-switch: 2.8em;
+  --height-of-switch: 1.6em;
+  /* size of sliding icon -- sun and moon */
+  --size-of-icon: 1.1em;
+  /* it is like a inline-padding of switch */
+  --slider-offset: 0.25em;
+  position: relative;
+  width: var(--width-of-switch);
+  height: var(--height-of-switch);
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #303136;
+  transition: .4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: var(--size-of-icon,1.4em);
+  width: var(--size-of-icon,1.4em);
+  border-radius: 20px;
+  left: var(--slider-offset,0.3em);
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(40deg,#ff0080,#ff8c00 70%);
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #f4f4f5;
+}
+
+input:checked + .slider:before {
+  left: calc(100% - (var(--size-of-icon,1.4em) + var(--slider-offset,0.3em)));
+  background: #303136;
+  /* change the value of second inset in box-shadow to change the angle and direction of the moon  */
+  box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+}
+
+

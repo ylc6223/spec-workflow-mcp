@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>数据流动效果</title>
+  <style>
+    body {
+      background: #111;
+      color: #fff;
+      font-family: monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .data-flow {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 18px;
+    }
+
+    .input-port, .output-port {
+      color: #fff;
+    }
+
+    .flow-line {
+      display: flex;
+      gap: 6px;
+    }
+
+    .flow-line span {
+      display: inline-block;
+      width: 1ch;
+      text-align: center;
+      color: #fff;
+      opacity: 0.2;
+      animation: blink 1.2s infinite;
+    }
+
+    .flow-line span:nth-child(1) { animation-delay: 0s; }
+    .flow-line span:nth-child(2) { animation-delay: 0.2s; }
+    .flow-line span:nth-child(3) { animation-delay: 0.4s; }
+    .flow-line span:nth-child(4) { animation-delay: 0.6s; }
+    .flow-line span:nth-child(5) { animation-delay: 0.8s; }
+
+    @keyframes blink {
+      0%, 100% { opacity: 0.2; }
+      50% { 
+        opacity: 1; 
+        color: #F80;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="data-flow">
+    <span class="input-port">]</span>
+    <div class="flow-line">
+      <span>·</span>
+      <span>•</span>
+      <span>·</span>
+      <span>•</span>
+      <span>·</span>
+    </div>
+    <span class="output-port">[</span>
+  </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "@specflow/docs",
+  "version": "0.0.20",
+  "description": "Documentation site for spec-workflow-mcp",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "keywords": [
+    "documentation",
+    "vitepress",
+    "spec-workflow",
+    "mcp"
+  ],
+  "author": "",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "vite": "^6.0.0",
+    "vitepress": "2.0.0-alpha.4",
+    "vue": "^3.5.19"
+  }
+}

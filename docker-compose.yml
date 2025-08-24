@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  spec-workflow-mcp:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./examples:/app/examples
+    command: pnpm start -- --AutoStartDashboard --port 3000
