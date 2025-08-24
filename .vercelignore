@@ -2,10 +2,13 @@
 node_modules
 .pnpm-store
 
-# Build artifacts (except docs dist)
-packages/*/dist
+# Build artifacts (except docs)
+packages/core/dist
+packages/dashboard-backend/dist  
+packages/dashboard-frontend/dist
+packages/spec-workflow-mcp/dist
+packages/vscode-extension/dist
 packages/*/build
-!packages/docs/.vitepress/dist
 
 # Development
 .env*.local

@@ -2,7 +2,7 @@
   "version": 2,
   "name": "spec-workflow-mcp-docs",
   "framework": null,
-  "buildCommand": "rm -f pnpm-lock.yaml && pnpm install && cd packages/docs && pnpm install && pnpm build",
+  "buildCommand": "rm -f pnpm-lock.yaml && pnpm install && pnpm --filter @specflow/docs build",
   "outputDirectory": "packages/docs/.vitepress/dist",
   "installCommand": "pnpm install --no-frozen-lockfile",
   "devCommand": "cd packages/docs && pnpm dev",
