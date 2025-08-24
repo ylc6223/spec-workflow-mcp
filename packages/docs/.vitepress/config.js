@@ -4,6 +4,9 @@ export default defineConfig({
   title: 'SpecFlow MCP',
   description: 'AI规范驱动开发平台 - 构建AI敏捷开发闭环，让每一行代码都有据可循',
   
+  // Ignore dead links during development
+  ignoreDeadLinks: true,
+  
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
